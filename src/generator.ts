@@ -13,12 +13,12 @@ type ColorKey = keyof typeof colors
  * Generator
  * --------------------------------------------------------------------------
  *
- *    0%      00
- *    10%     1A
- *    25%     40
- *    50%     7F
- *    75%     BF
- *    100%    FF
+ *        0%      00
+ *        10%     1A
+ *        25%     40
+ *        50%     7F
+ *        75%     BF
+ *        100%    FF
  *
  */
 export class Generator {
@@ -31,10 +31,17 @@ export class Generator {
       const line = ''.padEnd(10, '■')
 
       for (const color of ['primary', 'secondary', 'danger', 'warning', 'success']) {
-        const hex = this.colors[`color-${color}-500` as ColorKey]
-        const colorize = chalk.hex(hex)
+        // const hex = this.colors[`color-${color}-500` as ColorKey]
+        // const colorize = chalk.hex(hex)
 
-        console.log(colorize(chalk.bold(color.padEnd(12, ' ')) + line))
+        // console.log(colorize(chalk.bold(color.padEnd(12, ' ')) + line))
+
+        for (const i of [100, 200, 300, 400, 500, 600, 700, 800, 900]) {
+          const hex = this.colors[`color-${color}-${i}` as ColorKey]
+          const colorize = chalk.hex(hex)
+
+          console.log(colorize(chalk.bold(color.padEnd(12, ' ')) + line))
+        }
       }
 
       for (const i of [100, 200, 300, 400, 500, 600, 700, 800, 900]) {
@@ -64,26 +71,19 @@ export class Generator {
             readFileSync(join(__dirname, 'template.json')).toString(),
             {
               ...colorCodes,
-              color: (color: keyof typeof colorCodes) => {
+              color: (color: ColorKey) => {
                 return colorCodes[color]
               },
-              alpha: (hex: string, alpha: 0 | 10 | 25 | 50 | 75 | 100) => {
-                const color = colorCodes[hex as keyof typeof colorCodes]
-                switch (Number(alpha)) {
-                  case 0:
-                    return color + '00'
-                  case 10:
-                    return color + '1A'
-                  case 25:
-                    return color + '40'
-                  case 50:
-                    return color + '7F'
-                  case 75:
-                    return color + 'BF'
-                  case 100:
-                  default:
-                    return color + 'FF'
+              alpha: (name: ColorKey, alpha: 0 | 10 | 25 | 50 | 75 | 100) => {
+                const transMap = {
+                  0: '00',
+                  10: '1A',
+                  25: '40',
+                  50: '7F',
+                  75: 'BF',
+                  100: 'FF'
                 }
+                return colorCodes[name] + (transMap[alpha] ?? transMap[100])
               }
             }
           )

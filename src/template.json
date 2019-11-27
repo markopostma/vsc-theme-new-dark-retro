@@ -1,28 +1,31 @@
 {
   "colors": {
-    "activityBar.activeBorder": "<%- alpha('primary', 50) %>",
-    "activityBar.background": "#0F1B31",
+    "activityBar.activeBorder": "<%- danger %>",
+    "activityBar.background": "<%- color('color-dark-1000') %>",
     "activityBar.foreground": "<%- primary %>",
-    "activityBar.inactiveForeground": "#717989",
-    "activityBarBadge.background": "<%- primary %>40",
-    "activityBarBadge.foreground": "<%- color('color-white-300') %>",
-    "editor.background": "<%- color('color-dark-900') %>",
+    "activityBar.inactiveForeground": "<%- alpha('white', 25) %>",
+    "activityBarBadge.background": "<%- success %>",
+    "activityBarBadge.foreground": "<%- dark %>",
+    "editor.background": "<%- color('color-dark-1000') %>",
     "editor.foreground": "<%- color('color-white-300') %>",
-    "editor.lineHighlightBackground": "#0E192E",
-    "editor.selectionBackground": "#243149bf",
+    "editor.lineHighlightBackground": "<%- color('color-dark-1100') %>",
+    "editor.selectionBackground": "<%- alpha('primary', 10) %>",
     "editorBracketMatch.border": "<%- primary %>bf",
     "editorGroupHeader.tabsBackground": "<%- color('color-dark-900') %>",
-    "editorIndentGuide.activeBackground": "<%- primary %>40",
+    "editorIndentGuide.activeBackground": "<%- alpha('primary', 25) %>",
     "editorIndentGuide.background": "<%- color('color-dark-600') %>",
     "editorLineNumber.activeForeground": "#888F9C",
     "editorLineNumber.foreground": "#243149",
     "editorRuler.foreground": "#1E2B44",
     "list.activeSelectionBackground": "<%- primary %>40",
     "list.activeSelectionForeground": "<%- primary %>",
-    "list.hoverBackground": "#717989",
-    "list.inactiveSelectionBackground": "#1E2B44",
+    "list.hoverBackground": "<%- color('color-dark-900') %>",
+    "list.hoverForeground": "<%- alpha('white', 75) %>",
+    "list.inactiveSelectionBackground": "<%- alpha('primary', 0) %>",
     "list.inactiveSelectionForeground": "<%- primary %>",
-    "sideBar.background": "#0F1B31",
+    "list.invalidItemForeground": "<%- danger %>",
+    "sideBar.background": "<%- color('color-dark-900') %>",
+    "sideBar.foreground": "<%- alpha('white', 50) %>",
     "sideBarTitle.foreground": "#bbbbbb",
     "statusBar.background": "<%- secondary %>bf",
     "statusBar.foreground": "<%- color('color-white-300') %>bf",
@@ -74,7 +77,7 @@
         "invalid.illegal"
       ],
       "settings": {
-        "foreground": "#FF5370"
+        "foreground": "<%- danger %>"
       }
     },
     {
@@ -104,7 +107,7 @@
         "keyword.other.substitution"
       ],
       "settings": {
-        "foreground": "#89DDFF"
+        "foreground": "<%- primary %>"
       }
     },
     {
@@ -341,7 +344,7 @@
         "string.regexp"
       ],
       "settings": {
-        "foreground": "#89DDFF"
+        "foreground": "<%- primary %>"
       }
     },
     {
@@ -350,7 +353,7 @@
         "constant.character.escape"
       ],
       "settings": {
-        "foreground": "#89DDFF"
+        "foreground": "<%- primary %>"
       }
     },
     {
@@ -400,7 +403,7 @@
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name.json"
       ],
       "settings": {
-        "foreground": "<%- secondary %>bf"
+        "foreground": "<%- primary %>"
       }
     },
     {
