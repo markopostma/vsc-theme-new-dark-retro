@@ -1,8 +1,7 @@
 import chalk from 'chalk'
-import { readFileSync, writeFile } from 'fs'
 import ejs from 'ejs'
+import { readFileSync, writeFile } from 'fs'
 import { join } from 'path'
-import originalJSON from '../themes/new-dark-retro-color-theme.json'
 import colors from './colors.json'
 import { Compilation } from './compilation'
 
@@ -19,24 +18,18 @@ type ColorKey = keyof typeof colors
  *        50%     7F
  *        75%     BF
  *        100%    FF
- *
  */
 export class Generator {
   public readonly colors = colors
-  public readonly original = originalJSON
   public readonly output = join(__dirname, '../themes/new-dark-retro-color-theme.json')
 
   public async compile() {
     return await new Promise<any>(async (resolve) => {
       const line = ''.padEnd(10, '■')
+      const tints = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
       for (const color of ['primary', 'secondary', 'danger', 'warning', 'success']) {
-        // const hex = this.colors[`color-${color}-500` as ColorKey]
-        // const colorize = chalk.hex(hex)
-
-        // console.log(colorize(chalk.bold(color.padEnd(12, ' ')) + line))
-
-        for (const i of [100, 200, 300, 400, 500, 600, 700, 800, 900]) {
+        for (const i of tints) {
           const hex = this.colors[`color-${color}-${i}` as ColorKey]
           const colorize = chalk.hex(hex)
 
@@ -44,7 +37,7 @@ export class Generator {
         }
       }
 
-      for (const i of [100, 200, 300, 400, 500, 600, 700, 800, 900]) {
+      for (const i of [...tints, 1000, 1100]) {
         const hex = this.colors[`color-dark-${i}` as ColorKey]
         const colorize = chalk.hex(hex)
 
