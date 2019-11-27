@@ -1,0 +1,46 @@
+{
+  "name": "new-dark-retro-theme",
+  "displayName": "New dark retro theme",
+  "description": "Dark new retro theme for vsc",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.40.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "files": [
+    "themes/new-dark-retro-color-theme.json",
+    ".vscodeignore"
+  ],
+  "repository": {
+    "type": "https",
+    "url": "https://github.com/markopostma/vsc-theme-new-dark-retro"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "New Dark Retro",
+        "uiTheme": "vs-dark",
+        "path": "./themes/new-dark-retro-color-theme.json"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/ejs": "^2.7.0",
+    "@types/gulp": "^4.0.6",
+    "@types/node": "^12.12.14",
+    "@types/shelljs": "^0.8.6",
+    "chalk": "^3.0.0",
+    "ejs": "^3.0.1",
+    "gulp": "^4.0.2",
+    "rimraf": "^3.0.0",
+    "shelljs": "^0.8.3",
+    "ts-node": "^8.5.2",
+    "tslint": "^5.20.1",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "vscode": "^1.1.36"
+  }
+}

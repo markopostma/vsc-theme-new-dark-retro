@@ -1,0 +1,26 @@
+{
+  "defaultSeverity": "error",
+  "linterOptions": {
+    "exclude": [
+      "node_modules",
+      "tslint.json",
+      "dist"
+    ]
+  },
+  "rules": {
+    "curly": false,
+    "interface-name": false,
+    "no-reference": false,
+    "object-literal-sort-keys": false,
+    "no-console": false,
+    "semicolon": [
+      true,
+      "never"
+    ],
+    "quotemark": [
+      true,
+      "single"
+    ]
+  },
+  "rulesDirectory": []
+}
