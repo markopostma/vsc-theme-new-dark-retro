@@ -17,6 +17,7 @@
     "editorLineNumber.activeForeground": "#888F9C",
     "editorLineNumber.foreground": "#243149",
     "editorRuler.foreground": "#1E2B44",
+    "gitDecoration.ignoredResourceForeground": "<%- alpha('color-dark-400', 75) %>",
     "list.activeSelectionBackground": "<%- primary %>40",
     "list.activeSelectionForeground": "<%- primary %>",
     "list.hoverBackground": "<%- color('color-dark-900') %>",
